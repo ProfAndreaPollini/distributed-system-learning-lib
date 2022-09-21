@@ -9,17 +9,15 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.Executor;
+import java.util.stream.Collectors;
 
-public class ServiceDiscovery extends Thread{
-	private final int port;
+public class ServiceDiscovery extends TCPServiceServer {
 	private final ServiceDiscoveryHandler handler;
-	private boolean stopServer;
 	private HashMap<String, List<ServiceInfo>> services = new HashMap<>();
 	
 	public ServiceDiscovery(int port, ServiceDiscoveryHandler handler) {
-		this.port = port;
+		super(port);
 		this.handler = handler;
-		stopServer = false;
 		this.handler.setServiceDiscovery(this);
 	}
 	
@@ -33,6 +31,7 @@ public class ServiceDiscovery extends Thread{
 			while (!stopServer) {
 
 				Socket finalClientSocket = serverSocket.accept();
+				System.out.println("Client accepted");
 				Runnable task = () -> {
 					try {
 						var in  = finalClientSocket.getInputStream();
@@ -65,22 +64,16 @@ public class ServiceDiscovery extends Thread{
 		var hosts = services.get(serviceInfo.service);
 		hosts.add(serviceInfo);
 		services.put(serviceInfo.service,hosts);
+		var servicesNames = services.keySet().stream().map(
+						service -> {
+							return String.format("%s [%d]",service,services.get(service).size());
+						}
+		).collect(Collectors.joining(", "));
+		System.out.println(String.format("services [%d] =>{%s}",services.keySet().size(),servicesNames));
 	}
 	
 	public List<ServiceInfo> lookup(String service) {
 		return services.get(service);
 	}
 	
-	static class ThreadPerTaskExecutor implements Executor {
-		public void execute(Runnable r) {
-			try {
-				var t= new Thread(r);
-				t.start();
-				t.join();
-			} catch (InterruptedException e) {
-				throw new RuntimeException(e);
-			}
-		}
-	}
-
 }

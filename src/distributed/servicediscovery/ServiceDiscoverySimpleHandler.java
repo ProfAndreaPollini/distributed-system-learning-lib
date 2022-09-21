@@ -3,6 +3,7 @@ package distributed.servicediscovery;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
@@ -18,7 +19,12 @@ public class ServiceDiscoverySimpleHandler implements ServiceDiscoveryHandler{
 	@Override
 	public void handle(InputStream fromClient, OutputStream toClient) throws IOException, ClassNotFoundException, InterruptedException {
 		var sb = new StringBuilder();
-		var inString = new String(fromClient.readAllBytes(),"UTF-8");
+		//var inString = new String(fromClient.readAllBytes(),"UTF-8");
+		byte[] bytes = new byte[1024];
+		int len;
+		len = fromClient.read(bytes);
+		var inString = new String(bytes,0,len, StandardCharsets.UTF_8);
+		System.out.println(String.format("in>>> %s",inString));
 		// REGISTER:service:host:port
 		// LOOKUP:service
 		var cmdLine= inString.split(":");

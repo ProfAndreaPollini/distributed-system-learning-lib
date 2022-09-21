@@ -1,24 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="66ba41ef-8f3b-4b45-8376-b9aabbd8b690" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/distributed-system-learning-lib.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/distributed/examples/Example01.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/distributed/examples/SimpleTestHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/distributed/gateway/APIGateway.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/distributed/gateway/RouteHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/distributed/servicediscovery/ServiceDiscovery.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/distributed/servicediscovery/ServiceDiscoveryHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/distributed/servicediscovery/ServiceDiscoverySimpleHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/distributed/servicediscovery/ServiceInfo.java" afterDir="false" />
+    <list default="true" id="66ba41ef-8f3b-4b45-8376-b9aabbd8b690" name="Changes" comment="first import">
+      <change afterPath="$PROJECT_DIR$/src/distributed/core/Host.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/distributed/core/TCPServiceClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/distributed/core/UDPClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/distributed/core/UDPServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/distributed/examples/Node01.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/distributed/heartbeat/HeartbeatClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/distributed/heartbeat/HeartbeatServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/distributed/servicediscovery/SeviceDiscoveryClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/distributed/examples/Example01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/distributed/examples/Example01.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/distributed/servicediscovery/ServiceDiscovery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/distributed/servicediscovery/ServiceDiscovery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/distributed/servicediscovery/ServiceDiscoverySimpleHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/distributed/servicediscovery/ServiceDiscoverySimpleHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +25,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="Record" />
         <option value="Class" />
       </list>
     </option>
@@ -45,20 +42,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="distributed" />
+      <recent name="distributed.servicediscovery" />
+    </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="distributed.servicediscovery" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Node01">
     <configuration name="Example01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="distributed.examples.Example01" />
       <module name="distributed-system-learning-lib" />
@@ -72,8 +74,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Node01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="distributed.examples.Node01" />
+      <module name="distributed-system-learning-lib" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="distributed.examples.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Node01" />
         <item itemvalue="Application.Example01" />
       </list>
     </recent_temporary>
@@ -86,8 +102,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1663688044581</updated>
-      <workItem from="1663688047449" duration="7504000" />
+      <workItem from="1663688047449" duration="8364000" />
+      <workItem from="1663701452998" duration="7881000" />
     </task>
+    <task id="LOCAL-00001" summary="first import">
+      <created>1663695702051</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1663695702051</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -103,5 +128,35 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="first import" />
+    <option name="LAST_COMMIT_MESSAGE" value="first import" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/distributed/core/UDPServer.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/distributed/core/UDPServer.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/distributed/core/UDPServer.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/distributed/core/UDPClient.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
