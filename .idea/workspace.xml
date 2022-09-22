@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="66ba41ef-8f3b-4b45-8376-b9aabbd8b690" name="Changes" comment="first import">
-      <change afterPath="$PROJECT_DIR$/src/distributed/core/Host.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/distributed/core/TCPServiceClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/distributed/core/UDPClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/distributed/core/UDPServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/distributed/examples/Node01.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/distributed/heartbeat/HeartbeatClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/distributed/heartbeat/HeartbeatServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/distributed/servicediscovery/SeviceDiscoveryClient.java" afterDir="false" />
+    <list default="true" id="66ba41ef-8f3b-4b45-8376-b9aabbd8b690" name="Changes" comment="added hearbeat server and client.&#10;added service discovery client.&#10;many bug fixes.">
+      <change afterPath="$PROJECT_DIR$/src/distributed/broker/MessageBrokerClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/distributed/broker/MessageBrokerServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/distributed/broker/SubscriberInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/distributed/core/ThreadPerTaskExecutor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/distributed/core/TCPServiceClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/distributed/core/TCPServiceClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/distributed/examples/Example01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/distributed/examples/Example01.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/distributed/examples/Node01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/distributed/examples/Node01.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/distributed/servicediscovery/ServiceDiscovery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/distributed/servicediscovery/ServiceDiscovery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/distributed/servicediscovery/ServiceDiscoverySimpleHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/distributed/servicediscovery/ServiceDiscoverySimpleHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/distributed/servicediscovery/TCPServiceServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/distributed/core/TCPServiceServer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +23,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Record" />
         <option value="Class" />
+        <option value="Record" />
       </list>
     </option>
   </component>
@@ -53,11 +51,18 @@
 }</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="distributed.broker" />
       <recent name="distributed" />
       <recent name="distributed.servicediscovery" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projects\distributed-system-learning-lib\src\distributed\broker" />
+    </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="distributed.servicediscovery" />
+    </key>
+    <key name="MoveInnerDialog.RECENTS_KEY">
+      <recent name="distributed.core" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Node01">
@@ -103,7 +108,8 @@
       <option name="presentableId" value="Default" />
       <updated>1663688044581</updated>
       <workItem from="1663688047449" duration="8364000" />
-      <workItem from="1663701452998" duration="7881000" />
+      <workItem from="1663701452998" duration="8583000" />
+      <workItem from="1663779092610" duration="8731000" />
     </task>
     <task id="LOCAL-00001" summary="first import">
       <created>1663695702051</created>
@@ -112,7 +118,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663695702051</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="added hearbeat server and client.&#10;added service discovery client.&#10;many bug fixes.">
+      <created>1663778639423</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1663778639423</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,30 +144,36 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first import" />
-    <option name="LAST_COMMIT_MESSAGE" value="first import" />
+    <MESSAGE value="added hearbeat server and client.&#10;added service discovery client.&#10;many bug fixes." />
+    <option name="LAST_COMMIT_MESSAGE" value="added hearbeat server and client.&#10;added service discovery client.&#10;many bug fixes." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/distributed/core/UDPServer.java</url>
-          <line>29</line>
-          <option name="timeStamp" value="8" />
+          <url>file://$PROJECT_DIR$/src/distributed/examples/Node01.java</url>
+          <line>16</line>
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/distributed/core/UDPServer.java</url>
-          <line>20</line>
-          <option name="timeStamp" value="9" />
+          <url>file://$PROJECT_DIR$/src/distributed/broker/MessageBrokerServer.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="26" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/distributed/core/UDPServer.java</url>
-          <line>26</line>
-          <option name="timeStamp" value="11" />
+          <url>file://$PROJECT_DIR$/src/distributed/broker/MessageBrokerServer.java</url>
+          <line>70</line>
+          <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/distributed/core/UDPClient.java</url>
-          <line>30</line>
-          <option name="timeStamp" value="12" />
+          <url>file://$PROJECT_DIR$/src/distributed/broker/MessageBrokerClient.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/distributed/broker/MessageBrokerClient.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="32" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

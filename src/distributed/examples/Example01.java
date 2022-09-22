@@ -1,5 +1,6 @@
 package distributed.examples;
 
+import distributed.broker.MessageBrokerServer;
 import distributed.gateway.APIGateway;
 import distributed.heartbeat.HeartbeatServer;
 import distributed.servicediscovery.ServiceDiscovery;
@@ -13,6 +14,9 @@ public class Example01 {
 		var hs = new HeartbeatServer(25000);
 		hs.start();
 		
+		var mb = new MessageBrokerServer(20000);
+		mb.start();
+		
 		
 		var gateway =  new APIGateway("localhost",9900);
 		gateway.add(new SimpleTestHandler());
@@ -24,8 +28,6 @@ public class Example01 {
 		} catch (InterruptedException e) {
 			throw new RuntimeException(e);
 		}
-		
-		
 		
 	}
 }

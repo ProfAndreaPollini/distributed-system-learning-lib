@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.net.Socket;
 import java.nio.charset.StandardCharsets;
 
-public class TCPServiceClient {
+public class TCPServiceClient  {
 	protected final String serverAddress;
 	protected final int serverPort;
 	
@@ -17,6 +17,7 @@ public class TCPServiceClient {
 	protected Socket connectToServer() {
 		try {
 			var socket = new Socket(serverAddress, serverPort);
+			socket.setTcpNoDelay(true);
 			return socket;
 		} catch (IOException e) {
 			throw new RuntimeException(e);
@@ -25,8 +26,8 @@ public class TCPServiceClient {
 	
 	protected String readFromInputStream(DataInputStream in) throws IOException {
 		byte[] bytes = new byte[1024];
-		int len;
-		len = in.read(bytes);
+		int len = in.read(bytes);
+		if (len <0) return null;
 		return new String(bytes, 0, len, StandardCharsets.UTF_8);
 	}
 }
