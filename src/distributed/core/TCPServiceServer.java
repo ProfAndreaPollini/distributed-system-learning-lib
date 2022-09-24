@@ -3,17 +3,18 @@ package distributed.core;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.net.ServerSocket;
-import java.net.Socket;
+import java.net.*;
 import java.nio.charset.StandardCharsets;
 
 public abstract class TCPServiceServer extends Thread {
 	protected final int port;
+
 	protected boolean stopServer;
 	
 	public TCPServiceServer(int port) {
 		this.port = port;
 		stopServer = false;
+	
 	}
 	
 	protected static String readFromClient(InputStream fromClient, int maxBytes) throws IOException {
@@ -58,4 +59,11 @@ public abstract class TCPServiceServer extends Thread {
 	
 	abstract protected void handle(Socket socket, InputStream in, OutputStream out) throws IOException;
 	
+	public Host getHost() {
+		try {
+			return new Host(Inet4Address.getLocalHost().getHostAddress(),port);
+		} catch (UnknownHostException e) {
+			throw new RuntimeException(e);
+		}
+	}
 }

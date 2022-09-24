@@ -2,12 +2,10 @@ package distributed.broker;
 
 import distributed.core.Host;
 import distributed.core.TCPServiceServer;
-import distributed.core.ThreadPerTaskExecutor;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.net.ServerSocket;
 import java.net.Socket;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
@@ -18,8 +16,12 @@ import java.util.stream.Collectors;
 public class MessageBrokerServer extends TCPServiceServer {
 
     private final HashMap<String, List<SubscriberInfo>> subscriptions = new HashMap<>();
-    public MessageBrokerServer(int port) {
+    private final int serviceDiscoveryPort;
+    
+    public MessageBrokerServer(int port, int serviceDiscoveryPort) {
+        
         super(port);
+        this.serviceDiscoveryPort = serviceDiscoveryPort;
     }
 
 

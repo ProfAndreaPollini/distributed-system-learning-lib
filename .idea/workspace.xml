@@ -1,18 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="66ba41ef-8f3b-4b45-8376-b9aabbd8b690" name="Changes" comment="added hearbeat server and client.&#10;added service discovery client.&#10;many bug fixes.">
-      <change afterPath="$PROJECT_DIR$/src/distributed/broker/MessageBrokerClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/distributed/broker/MessageBrokerServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/distributed/broker/SubscriberInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/distributed/core/ThreadPerTaskExecutor.java" afterDir="false" />
+    <list default="true" id="66ba41ef-8f3b-4b45-8376-b9aabbd8b690" name="Changes" comment="added message broker server and client">
+      <change afterPath="$PROJECT_DIR$/examples/config/config.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/example01/Node02.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/example01/Node03.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/distributed/DistributedSystem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/distributed/DistributedSystemNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/distributed/config/ConfigLoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/distributed/config/ConfigProperties.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/distributed/core/TCPServiceClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/distributed/core/TCPServiceClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/distributed/examples/Example01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/distributed/examples/Example01.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/distributed/examples/Node01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/distributed/examples/Node01.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/distributed-system-learning-lib.iml" beforeDir="false" afterPath="$PROJECT_DIR$/distributed-system-learning-lib.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/distributed/broker/MessageBrokerClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/distributed/broker/MessageBrokerClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/distributed/broker/MessageBrokerServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/distributed/broker/MessageBrokerServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/distributed/core/TCPServiceServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/distributed/core/TCPServiceServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/distributed/examples/Example01.java" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example01/Example01.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/distributed/examples/Node01.java" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example01/Node01.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/distributed/examples/SimpleTestHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example01/SimpleTestHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/distributed/heartbeat/HeartbeatServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/distributed/heartbeat/HeartbeatServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/distributed/servicediscovery/ServiceDiscovery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/distributed/servicediscovery/ServiceDiscovery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/distributed/servicediscovery/TCPServiceServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/distributed/core/TCPServiceServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/distributed/servicediscovery/SeviceDiscoveryClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/distributed/servicediscovery/ServiceDiscoveryClient.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +31,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Record" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -40,15 +48,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "18 (2)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="distributed.broker" />
@@ -56,6 +69,9 @@
       <recent name="distributed.servicediscovery" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projects\distributed-system-learning-lib\examples\config" />
+      <recent name="D:\Projects\distributed-system-learning-lib\examples\example01" />
+      <recent name="D:\Projects\distributed-system-learning-lib\examples" />
       <recent name="D:\Projects\distributed-system-learning-lib\src\distributed\broker" />
     </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
@@ -65,7 +81,7 @@
       <recent name="distributed.core" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Node01">
+  <component name="RunManager" selected="Application.Node03">
     <configuration name="Example01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="distributed.examples.Example01" />
       <module name="distributed-system-learning-lib" />
@@ -79,12 +95,51 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Node01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="distributed.examples.Node01" />
+    <configuration name="Node02" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="example01.Node02" />
       <module name="distributed-system-learning-lib" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="distributed.examples.*" />
+          <option name="PATTERN" value="example01.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Node03" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="example01.Node03" />
+      <module name="distributed-system-learning-lib" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="example01.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="example01.Example01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="example01.Example01" />
+      <module name="distributed-system-learning-lib" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="example01.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="example01.Node01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="example01.Node01" />
+      <module name="distributed-system-learning-lib" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="example01.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -94,7 +149,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Node01" />
+        <item itemvalue="Application.Node03" />
+        <item itemvalue="Application.Node02" />
+        <item itemvalue="Application.example01.Example01" />
+        <item itemvalue="Application.example01.Node01" />
         <item itemvalue="Application.Example01" />
       </list>
     </recent_temporary>
@@ -109,7 +167,8 @@
       <updated>1663688044581</updated>
       <workItem from="1663688047449" duration="8364000" />
       <workItem from="1663701452998" duration="8583000" />
-      <workItem from="1663779092610" duration="8731000" />
+      <workItem from="1663779092610" duration="9318000" />
+      <workItem from="1664032054897" duration="7905000" />
     </task>
     <task id="LOCAL-00001" summary="first import">
       <created>1663695702051</created>
@@ -125,7 +184,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663778639423</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added message broker server and client">
+      <created>1663873201729</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1663873201729</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -145,35 +211,26 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first import" />
     <MESSAGE value="added hearbeat server and client.&#10;added service discovery client.&#10;many bug fixes." />
-    <option name="LAST_COMMIT_MESSAGE" value="added hearbeat server and client.&#10;added service discovery client.&#10;many bug fixes." />
+    <MESSAGE value="added message broker server and client" />
+    <option name="LAST_COMMIT_MESSAGE" value="added message broker server and client" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/distributed/examples/Node01.java</url>
+          <url>file://$PROJECT_DIR$/examples/example01/Node01.java</url>
           <line>16</line>
           <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/distributed/broker/MessageBrokerServer.java</url>
-          <line>32</line>
+          <line>34</line>
           <option name="timeStamp" value="26" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/distributed/broker/MessageBrokerServer.java</url>
-          <line>70</line>
+          <line>72</line>
           <option name="timeStamp" value="27" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/distributed/broker/MessageBrokerClient.java</url>
-          <line>27</line>
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/distributed/broker/MessageBrokerClient.java</url>
-          <line>22</line>
-          <option name="timeStamp" value="32" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

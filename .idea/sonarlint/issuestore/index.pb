@@ -2,8 +2,6 @@
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
-S
-#distributed-system-learning-lib.iml,c\f\cf011d88d31c5331507489d67d89dfaa6e78bbbc
 a
 1src/distributed/servicediscovery/ServiceInfo.java,8\d\8df4e1b54fd05af0ad3b81fa3abf53dd9aac0213
 Y
@@ -16,3 +14,9 @@ m
 =src/distributed/servicediscovery/ServiceDiscoveryHandler.java,b\6\b6bb17284470a4bcb4e39749cd6039824c95655d
 N
 src/distributed/core/Host.java,c\7\c7004da666ddeaa1cc0b1f237b623f98fbd32f80
+S
+#src/distributed/core/UDPClient.java,d\3\d35da3038b5264de7d290e1c7eed0c7a8b3cfec3
+s
+Csrc/distributed/servicediscovery/ServiceDiscoverySimpleHandler.java,6\f\6ffa976b552c205d3683ebfee8c0540998f7e7b0
+S
+#src/distributed/core/UDPServer.java,9\8\9888bee33ecc22a9702aa06ec3a6dddc00b93784

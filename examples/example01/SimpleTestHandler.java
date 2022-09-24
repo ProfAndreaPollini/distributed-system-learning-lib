@@ -1,4 +1,4 @@
-package distributed.examples;
+package example01;
 
 import com.sun.net.httpserver.HttpExchange;
 import distributed.gateway.RouteHandler;

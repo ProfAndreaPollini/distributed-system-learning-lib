@@ -10,9 +10,9 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SeviceDiscoveryClient extends TCPServiceClient {
+public class ServiceDiscoveryClient extends TCPServiceClient {
 	
-	public SeviceDiscoveryClient(String serverAddress, int serverPort) {
+	public ServiceDiscoveryClient(String serverAddress, int serverPort) {
 		super(serverAddress, serverPort);
 	}
 	

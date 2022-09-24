@@ -1,13 +1,13 @@
-package distributed.examples;
+package example01;
 
 import distributed.broker.MessageBrokerClient;
 import distributed.heartbeat.HeartbeatClient;
 import distributed.servicediscovery.ServiceInfo;
-import distributed.servicediscovery.SeviceDiscoveryClient;
+import distributed.servicediscovery.ServiceDiscoveryClient;
 
 public class Node01 {
 	public static void main(String[] args) {
-		var sd = new SeviceDiscoveryClient("localhost",11000);
+		var sd = new ServiceDiscoveryClient("localhost",11000);
 		sd.register(new ServiceInfo("TEST","localhost",12000));
 		sd.register(new ServiceInfo("TEST","localhost",13000));
 		sd.lookup("TEST");
